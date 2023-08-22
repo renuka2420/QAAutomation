@@ -1,0 +1,26 @@
+package ui;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import base.BaseTest;
+
+public class T4a extends BaseTest {
+	@Test
+	public static void test4() throws IOException, InterruptedException {
+		
+		driver.manage().window().maximize();
+		String expected = driver.getTitle();
+		String actual = "Login | Salesforce";
+		softassert.assertEquals(actual, expected);
+		
+		driver.findElement(By.id(loc.getProperty("forgot_ur_pass_id"))).click();
+		Thread.sleep(2000);
+		String actual1 =driver.getTitle();
+		System.out.println(actual1);
+
+	}
+
+}

@@ -1,0 +1,36 @@
+package base;
+
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class BaseTest {
+
+	public static WebDriver driver;
+ public static FileReader fr;
+ public static Properties p=new Properties();
+	
+ public void setUp() throws IOException{
+	
+	 if(driver==null)
+	{
+		fr=new FileReader("C:\\eclipse workspace\\Automation\\src\\test\\resources\\configFiles\\config.properties");
+		p.load(fr);
+	}
+	 if(p.getProperty("browser").equalsIgnoreCase("chrome")) {
+		 driver=new ChromeDriver();
+		 driver.get(p.getProperty("url"));
+		 
+	 }else if(p.getProperty("browser").equalsIgnoreCase("firefox")){
+		 driver=new FirefoxDriver();
+		 driver.get(p.getProperty("url"));
+	 }
+ }
+public void tearDown() {
+		driver.close();
+	}
+}

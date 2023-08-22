@@ -1,0 +1,15 @@
+package ui;
+
+import java.io.IOException;
+
+import base.BaseTest;
+
+public class T4 extends BaseTest {
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		setUp();
+		
+
+	}
+
+}

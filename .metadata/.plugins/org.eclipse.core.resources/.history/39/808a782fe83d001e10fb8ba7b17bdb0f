@@ -1,0 +1,38 @@
+package ui;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import base.BaseTest;
+
+public class T1 extends BaseTest {
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		setUp();
+		driver.manage().window().maximize();
+		
+		WebElement usernameField=driver.findElement(By.xpath(loc.getProperty("username")));
+		usernameField.sendKeys("renu@tek.com");
+		System.out.println(usernameField.isDisplayed());
+		WebElement passwordField=driver.findElement(By.xpath(loc.getProperty("password")));
+		passwordField.clear();
+		driver.findElement(By.xpath(loc.getProperty("login_button"))).click();
+		
+		WebElement error=driver.findElement(By.xpath(loc.getProperty("nopassword-error")));
+
+		String e=error.getText();
+		System.out.println(e);
+		if (e.equalsIgnoreCase("Please enter your password")) {
+			System.out.println("correct error message is displayed:Pass");
+		}
+		else {
+			System.out.println("correct error message is not displayed:Fail");
+		}
+		tearDown();
+		
+
+	}
+
+}

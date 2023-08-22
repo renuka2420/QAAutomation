@@ -1,0 +1,16 @@
+/*Given an array prints the unique numbers and also print the number of 
+
+
+ * occurrences of duplicate numbers.
+ */
+
+package hackathonJava;
+
+public class Q5 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,14 @@
+//find the index of an array element
+
+package day4;
+
+public class IndexofanArray {
+
+	public static void main(String[] args) {
+		
+int[] x= {1,5,76,89,44,55,66,22,11,14,14134};
+
+
+	}
+
+}

@@ -1,0 +1,13 @@
+//remove specific element fron an array
+
+
+package day4;
+
+public class Remove {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

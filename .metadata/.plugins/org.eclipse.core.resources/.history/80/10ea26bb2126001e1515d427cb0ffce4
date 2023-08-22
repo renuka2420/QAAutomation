@@ -1,0 +1,24 @@
+//find the index of an array element
+
+package day4;
+
+public class IndexofanArray {
+
+	public static void main(String[] args) {
+		
+int[] x= {1,5,76,89,44,55,66,22,11,14,14134};
+int item=69;
+
+
+for(int i=0;i<x.length;i++) {
+	
+	x[i]=item;
+	System.out.println("element found at index"+i);
+	
+	
+}
+	System.out.println("not found");
+	
+	}
+					
+}

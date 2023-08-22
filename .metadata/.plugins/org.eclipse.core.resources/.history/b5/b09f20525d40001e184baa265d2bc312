@@ -1,0 +1,27 @@
+package ui;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import base.BaseTest;
+
+public class Test4b extends BaseTest {
+	@Test
+	public static void test4b() {
+		driver.manage().window().maximize();
+		String expected = driver.getTitle();
+		String actual = "Login | Salesforce";
+		softassert.assertEquals(actual, expected);
+		
+		WebElement usernameField= driver.findElement(By.xpath(loc.getProperty("username")));
+		usernameField.sendKeys("123");
+		
+		String u = usernameField.getAttribute("value");
+		System.out.println("the user name is displayed in user name field: " + u);
+	}
+	
+	
+	
+
+}

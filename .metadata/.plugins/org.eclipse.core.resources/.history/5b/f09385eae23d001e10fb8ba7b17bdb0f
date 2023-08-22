@@ -1,0 +1,12 @@
+package ui;
+
+import base.BaseTest;
+
+public class T1 extends BaseTest {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

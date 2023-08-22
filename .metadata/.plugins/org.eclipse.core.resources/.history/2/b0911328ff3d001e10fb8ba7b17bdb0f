@@ -1,0 +1,24 @@
+package ui;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+
+import base.BaseTest;
+
+public class T3 extends BaseTest {
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		
+		setUp();
+		driver.manage().window().maximize();
+		driver.findElement(By.xpath(loc.getProperty("username"))).sendKeys("renu@tek.com");
+		driver.findElement(By.xpath(loc.getProperty("password"))).sendKeys("Kiaansai2420");
+		driver.findElement(By.xpath(loc.getProperty("remember_me_checkbox"))).click();
+		driver.findElement(By.xpath(loc.getProperty("login_button"))).click();
+		System.out.println("Afer successful login the home page titile is: "+driver.getTitle());
+		driver.findElement(By.id(loc.getProperty("usermenudropdownbyid"))).click();
+
+	}
+
+}

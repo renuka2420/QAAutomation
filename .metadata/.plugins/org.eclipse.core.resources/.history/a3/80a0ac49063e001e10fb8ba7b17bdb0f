@@ -1,0 +1,47 @@
+package ui;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+
+import org.openqa.selenium.WebElement;
+
+
+import base.BaseTest;
+
+public class T3 extends BaseTest {
+
+	public static void main(String[] args) throws IOException, InterruptedException {
+		
+		setUp();
+		driver.manage().window().maximize();
+		driver.findElement(By.xpath(loc.getProperty("username"))).sendKeys("renu@tek.com");
+		driver.findElement(By.xpath(loc.getProperty("password"))).sendKeys("Kiaansai2420");
+		driver.findElement(By.xpath(loc.getProperty("remember_me_checkbox"))).click();
+		driver.findElement(By.xpath(loc.getProperty("login_button"))).click();
+		System.out.println("Afer successful login, the home page titile is: "+driver.getTitle());
+		WebElement usermenu=driver.findElement(By.id(loc.getProperty("usermenudropdownbyid")));
+		usermenu.click();
+		WebElement dropdown =driver.findElement(By.id(loc.getProperty("dropdown")));
+		
+		dropdown.findElement(By.xpath(loc.getProperty("logout"))).click();
+		System.out.println(driver.getTitle());
+		Thread.sleep(2000);
+		String s=driver.findElement(By.id(loc.getProperty("remember_userNameField_id"))).getText();
+		if(s.equals("renu@tek.com")) {
+			System.out.println("usernsme is popolated "+s);
+		}
+		else {
+			System.out.println("username is not populated");
+		}
+		boolean b=driver.findElement(By.xpath(loc.getProperty("remember_me_checkbox"))).isSelected();
+		
+		if(b) {
+			System.out.println("the checkbox is enabled "+b);
+		}else {
+			System.out.println("the checkbox is not enabled "+false);
+		}
+
+	}
+
+}

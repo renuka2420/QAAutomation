@@ -1,0 +1,45 @@
+package ui;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import base.BaseTest;
+
+public class T1 extends BaseTest {
+
+	@Test
+	public static void test1() throws IOException, InterruptedException {
+		setUp();
+		driver.manage().window().maximize();
+		String expected= driver.getTitle();
+		 String actual="Login | Salesforce";
+		 softassert.assertEquals(actual, expected);
+
+		WebElement usernameField = driver.findElement(By.xpath(loc.getProperty("username")));
+		usernameField.sendKeys("renu@tek.com");
+
+		WebElement passwordField = driver.findElement(By.xpath(loc.getProperty("password")));
+		passwordField.clear();
+		//String u=usernameField.getText();
+		// System.out.println(u);
+		driver.findElement(By.xpath(loc.getProperty("login_button"))).click();
+
+		WebElement error = driver.findElement(By.xpath(loc.getProperty("noPassword-errorMsg")));
+
+		String actual1 = error.getText();
+		String expected1 = "Please enter your password.";
+
+		System.out.println("the actual error message is: " + actual);
+		if (actual1.equals(expected1)) {
+			System.out.println("correct error message is displayed:Pass");
+		} else {
+			System.out.println("correct error message is not displayed:Fail");
+		}
+		//tearDown();
+
+	}
+
+}
