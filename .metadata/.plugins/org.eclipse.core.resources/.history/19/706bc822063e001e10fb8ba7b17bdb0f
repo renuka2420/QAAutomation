@@ -1,9 +1,0 @@
-username=//input[@id='username']
-password=//input[@id='password']
-login_button=//input[@id='Login']
-noPassword-error=//div[@id='error']
-remember_me_checkbox=//input[@type='checkbox'and @name='rememberUn']
-usermenudropdownbyid=userNavLabel
-dropdown=userNav-menuItems
-logout=//a[@title='Logout']
-remember_userNameField_id=idcard-identity

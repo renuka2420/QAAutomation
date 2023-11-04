@@ -1,0 +1,11 @@
+{
+	"login": {
+		"prod": "https://us-central1-qa01-tekarch-accmanager.cloudfunctions.net",
+
+		"endpoints": {
+			"login": "/login",
+			"adddata": "/addData",
+			"getdata": "/getdata"
+		}
+	}
+}

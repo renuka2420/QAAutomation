@@ -1,4 +1,0 @@
-username=//input[@id='username']
-password=//input[@id='password']
-login_button=//input[@id='Login']
-nopassword-error=//div[@id='error']

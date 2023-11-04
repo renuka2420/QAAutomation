@@ -84,7 +84,7 @@ public class CountingVowels {
 				
 			}
 		}
-		System.out.println("the vowels are"+count);
+		System.out.println("the vowels are "+count);
 	}
 	
 	public static void main(String[] args) {
